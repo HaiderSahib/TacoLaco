@@ -1,20 +1,56 @@
 # TacoLaco order web service
 
 The service receive a JSON array with the order list and return the order total
+The service accept a request as JSON array with the below format and return the order total as double. If the quantity of the order is >=4, a discount of 20% will applied to the total price.
 
+```
+[
+    {
+        "name": Taco 1 type (string),
+        "quantity": quantity of Taco 1 (double)
+    },
+    {
+        "name": Taco 2 type (string),
+        "quantity": quantity of Taco 2 (double)
+    },
+    .
+    .
+    .
+    {
+        "name": Taco n type (string),
+        "quantity": quantity of Taco n (double)
+    },   
+   
+]
+```
+Sample request data for two orders shown below:
+
+```
+[
+    {
+        "name": "Chicken Taco",
+        "quantity": 2
+    },
+    {
+        "name": "Veggie Taco",
+        "quantity": 3
+    }
+]
+```
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a Tomcat server.
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
+What things you need to build and test the project 
+
 1. IntelliJ IDEA with Spring Boot
 2. Tomcat 9 (to deploy the war file)
 3. Postman (to test the deployed war file)
 
-### Installing
+### Building the project
 
 1. Clone the project source code to your local machine
 2. From IntelliJ, click on File->Open and select the project folder 
