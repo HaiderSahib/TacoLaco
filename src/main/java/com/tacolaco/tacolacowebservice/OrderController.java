@@ -20,18 +20,25 @@ public class OrderController {
     }
     @PostMapping(path = "/getOrderTotal")
     public String getOrderTotal(@RequestBody List<Order> orderList) {
+        try {
+            Iterator<Order> it = orderList.iterator();
+            double total = 0.0;
+            int totalQuantity = 0;
+            while (it.hasNext()) {
+                Order o = it.next();
+                Double price = tacos.get(o.getName());
+                if (price == null)
+                    return "error";
+                total = total + price * o.getQuantity();
+                totalQuantity += o.getQuantity();
 
-        Iterator<Order> it = orderList.iterator();
-        double total = 0.0;
-        int totalQuantity = 0;
-        while (it.hasNext()){
-            Order o = it.next();
-            total = total + tacos.get(o.getName())*o.getQuantity();
-            totalQuantity += o.getQuantity();
+            }
+            if (totalQuantity >= 4)
+                total *= 0.8;//Discount 20%
+            String totalStr = String.format("%.02f", total);
+            return totalStr;
+        }catch (Exception e){
+            return "error";
         }
-        if(totalQuantity>=4)
-            total *= 0.8;
-        String totalStr = String.format("%.02f", total);
-        return totalStr;
     }
 }
