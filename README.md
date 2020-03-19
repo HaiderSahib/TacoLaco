@@ -39,4 +39,24 @@ What things you need to install the software and how to install them
 
 ## Testing the deployed war file using Postman
 
+1. Open Postman
+2. Paste the url http://localhost:8080/tacolacowebservice-0.0.1-SNAPSHOT/getOrderTotal/ into the request field
+3. Selec Post method
+4. Click on Body tap
+5. Select raw and JSON
+6. Paste the following sample request data
 
+```
+[
+    {
+        "name": "Chicken Taco",
+        "quantity": 2
+    },
+    {
+        "name": "Veggie Taco",
+        "quantity": 3
+    }
+]
+```
+7. Click on Send
+8. The response body should display 10.80
