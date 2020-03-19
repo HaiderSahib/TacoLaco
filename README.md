@@ -24,7 +24,7 @@ The service accepts a list of orders as JSON array and returns the order total a
    
 ]
 ```
-##Sample request data for two orders shown below:
+## Sample request data for two orders shown below:
 
 ```
 [
