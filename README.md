@@ -11,76 +11,32 @@ These instructions will get you a copy of the project up and running on your loc
 
 What things you need to install the software and how to install them
 1. IntelliJ IDEA with Spring Boot
-2. Tomcat 9
+2. Tomcat 9 (to deploy the war file)
+3. Postman (to test the deployed war file)
 
 ### Installing
 
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
+1. Clone the project source code to your local machine
+2. From IntelliJ, click on File->Open and select the project folder 
 
 ## Running the tests
 
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
+1. To run the test, right click on the project name and select "Run 'All Tests'"
+2. To test different values, change the tacos name or quantities or add more orders in OrderControllerTest under test package as shown below:
 
 ```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
+        List<Order> orderList = new ArrayList<>();
+        orderList.add(new Order("Beef Taco", 2));
+        orderList.add(new Order("Chorizo Taco", 1));
 ```
 
 ## Deployment
 
-Add additional notes about how to deploy this on a live system
+1. To generate a war file, from IntelliJ, open Maven panel, expand Lifecycle, right click on package then select Run Maven Build
+2. The war file will be created under target folder
+3. Deploy the war file into Tomacat using Manager App
 
-## Built With
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+## Testing the deployed war file using Postman
 
-## Contributing
 
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
-
-## Authors
-
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
