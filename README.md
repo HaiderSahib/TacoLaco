@@ -1,6 +1,5 @@
 # TacoLaco order web service
 
-The service receive a JSON array with the order list and return the order total
 The service accept a request as JSON array with the below format and return the order total as double. If the quantity of the order is >=4, a discount of 20% will applied to the total price.
 
 ```
